@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import jsPDF from "jspdf";
+import HeaderNavbar from "../../Component/Util/HeaderNavbar";
 
 export default function DetailInvoicePenyewa() {
   const [activityDetail, setActivityDetail] = useState(null);
@@ -52,50 +53,67 @@ export default function DetailInvoicePenyewa() {
   };
 
   return (
-    <div className="container" style={{ marginTop: "10rem" }}>
-      <h2>Detail History Kendaraan</h2>
-      {activityDetail && (
-        <table className="table">
-          <tbody>
-            <tr>
-              <td>Nama:</td>
-              <td>{activityDetail.nama}</td>
-            </tr>
-            <tr>
-              <td>Jenis:</td>
-              <td>{activityDetail.jenis}</td>
-            </tr>
-            <tr>
-              <td>Merk:</td>
-              <td>{activityDetail.merk}</td>
-            </tr>
-            <tr>
-              <td>Tahun Produksi:</td>
-              <td>{activityDetail.tahun_produksi}</td>
-            </tr>
-            <tr>
-              <td>Warna:</td>
-              <td>{activityDetail.warna}</td>
-            </tr>
-            <tr>
-              <td>Nomor Plat:</td>
-              <td>{activityDetail.nomor_plat}</td>
-            </tr>
-            <tr>
-              <td>Status:</td>
-              <td>{activityDetail.status}</td>
-            </tr>
-          </tbody>
-        </table>
-      )}
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <button className="btn btn-primary mr-2" onClick={handleBack}>
-          Back
-        </button>
-        <button className="btn btn-success" onClick={handleCreateInvoice}>
-          Create Invoice
-        </button>
+    <>
+      <HeaderNavbar />
+      <div className="container" style={{ marginTop: "10rem" }}>
+        <h2>Detail History Kendaraan</h2>
+        {activityDetail && (
+          <table className="table">
+            <tbody>
+              <tr>
+                <td>Nama:</td>
+                <td>{activityDetail.nama}</td>
+              </tr>
+              <tr>
+                <td>Jenis:</td>
+                <td>{activityDetail.jenis}</td>
+              </tr>
+              <tr>
+                <td>Merk:</td>
+                <td>{activityDetail.merk}</td>
+              </tr>
+              <tr>
+                <td>Tahun Produksi:</td>
+                <td>{activityDetail.tahun_produksi}</td>
+              </tr>
+              <tr>
+                <td>Warna:</td>
+                <td>{activityDetail.warna}</td>
+              </tr>
+              <tr>
+                <td>Nomor Plat:</td>
+                <td>{activityDetail.nomor_plat}</td>
+              </tr>
+              <tr>
+                <td>Status:</td>
+                <td>{activityDetail.status}</td>
+              </tr>
+
+              <tr>
+                <td>
+                  {activityDetail.status === "sukses" ? (
+                    <p>Kendaraan sukses terdaftar di outlet</p>
+                  ) : (
+                    <p style={{ color: "orange" }}>menunggu Konfirmasi admin</p>
+                  )}
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        )}
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <button className="btn btn-primary mr-2" onClick={handleBack}>
+            Back
+          </button>
+
+          {activityDetail.status === "sukses" && (
+            <button className="btn btn-success" onClick={handleCreateInvoice}>
+              Create Invoice
+            </button>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

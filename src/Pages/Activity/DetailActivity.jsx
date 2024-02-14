@@ -96,15 +96,34 @@ export default function DetailActivity() {
               <td>Status:</td>
               <td>{activityDetail.status}</td>
             </tr>
+            <tr>
+              <td>
+                {activityDetail.status === "sukses" ? (
+                  <p className="text-info">
+                    Silahkan tunjukkan bukti invoice ke outlet
+                  </p>
+                ) : (
+                  <p>
+                    Note:{" "}
+                    <span style={{ color: "orange" }}>
+                      Menunggu Konfirmasi Admin
+                    </span>
+                  </p>
+                )}
+              </td>
+              <td></td>
+            </tr>
           </tbody>
         </table>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <button className="btn btn-primary mr-2" onClick={handleBack}>
             Back
           </button>
-          <button className="btn btn-success" onClick={handleCreateInvoice}>
-            Create Invoice
-          </button>
+          {activityDetail.status === "sukses" && (
+            <button className="btn btn-success" onClick={handleCreateInvoice}>
+              Create Invoice
+            </button>
+          )}
         </div>
       </div>
     </>

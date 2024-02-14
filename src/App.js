@@ -15,6 +15,7 @@ import Activity from "./Pages/Activity/Activity";
 import DetailActivity from "./Pages/Activity/DetailActivity";
 import TambahKendaraan from "./Pages/Kendaraan/TambahKendaraan";
 import DetailInvoicePenyewa from "./Pages/Activity/DetailInvoicePenyewa";
+import DetailProfile from "./Pages/Profile/DetailProfile";
 
 function App() {
   const token = sessionStorage.getItem("token");
@@ -30,6 +31,7 @@ function App() {
           <>
             <Route path="/destination" element={<DestinationTravel />} />
             <Route path="/activity" element={<Activity />} />
+            <Route path="/detail-profile" element={<DetailProfile />} />
             <Route path="/tambah-kendaraan" element={<TambahKendaraan />} />
             <Route path="/activity/:id_sewa" element={<DetailActivity />} />
             <Route

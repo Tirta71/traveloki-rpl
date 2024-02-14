@@ -63,7 +63,10 @@ export default function HomePelanggan() {
                           </div>
                           <div className="links-box clearfix">
                             <div className="link">
-                              <a href="#" className="theme-btn btn-style-one">
+                              <a
+                                href="#/destination"
+                                className="theme-btn btn-style-one"
+                              >
                                 <span>
                                   View All Tours
                                   <i className="icon">
@@ -73,21 +76,6 @@ export default function HomePelanggan() {
                                       title=""
                                     />
                                   </i>
-                                </span>
-                              </a>
-                            </div>
-                            <div className="link">
-                              <a
-                                href="https://www.youtube.com/watch?v=0xhr0j877bI"
-                                className="theme-btn lightbox-image"
-                              >
-                                <i className="ripple"></i>
-                                <span className="icon">
-                                  <img
-                                    src="images/icons/video-icon-1.svg"
-                                    alt=""
-                                    title=""
-                                  />
                                 </span>
                               </a>
                             </div>
