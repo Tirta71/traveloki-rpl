@@ -88,17 +88,6 @@ export default function DetailInvoicePenyewa() {
                 <td>Status:</td>
                 <td>{activityDetail.status}</td>
               </tr>
-
-              <tr>
-                <td>
-                  {activityDetail.status === "sukses" ? (
-                    <p>Kendaraan sukses terdaftar di outlet</p>
-                  ) : (
-                    <p style={{ color: "orange" }}>menunggu Konfirmasi admin</p>
-                  )}
-                </td>
-                <td></td>
-              </tr>
             </tbody>
           </table>
         )}
@@ -106,8 +95,7 @@ export default function DetailInvoicePenyewa() {
           <button className="btn btn-primary mr-2" onClick={handleBack}>
             Back
           </button>
-
-          {activityDetail.status === "sukses" && (
+          {activityDetail && activityDetail.status === "sukses" && (
             <button className="btn btn-success" onClick={handleCreateInvoice}>
               Create Invoice
             </button>
