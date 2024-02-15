@@ -23,7 +23,7 @@ export default function DetailProfile() {
               <ul class="clearfix">
                 <li>
                   <span class="icon-home fa fa-home"></span>
-                  <a href="index.html">Home</a>
+                  <a href="/">Home</a>
                 </li>
                 <li class="current">Your Profile</li>
               </ul>
