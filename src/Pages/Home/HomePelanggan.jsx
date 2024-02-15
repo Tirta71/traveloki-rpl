@@ -64,17 +64,13 @@ export default function HomePelanggan() {
                           <div className="links-box clearfix">
                             <div className="link">
                               <a
-                                href="#/destination"
+                                href="/destination"
                                 className="theme-btn btn-style-one"
                               >
                                 <span>
                                   View All Tours
                                   <i className="icon">
-                                    <img
-                                      src="images/icons/logo-icon.svg"
-                                      alt=""
-                                      title=""
-                                    />
+                                    <img src="" alt="" title="" />
                                   </i>
                                 </span>
                               </a>
